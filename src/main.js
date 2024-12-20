@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 import { App } from './app.js';
 import { GlobeCamera } from './globe-camera.js';
@@ -7,9 +7,10 @@ import * as MATH from './math.js';
 import * as PARTICLES from './particle-system.js';
 import * as NOISE from './noise.js';
 
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
+import { EffectComposer } from 'three-stdlib/postprocessing/EffectComposer';
+import { RenderPass } from 'three-stdlib/postprocessing/RenderPass';
+
+// import { GTAOPass } from 'three-stdlib/postprocessing/GTAOPass';
 
 
 import { TextureArrayLoader } from './texture-atlas.js';
@@ -110,8 +111,8 @@ class ParticleProject extends App {
     this.#snowSceneComposer_ = new EffectComposer(this.Renderer);
     this.#snowSceneComposer_.renderToScreen = false;
 
-    const gtaoPass = new GTAOPass(this.#globeScene_, this.#snowSceneCamera_);
-    gtaoPass.output = GTAOPass.OUTPUT.Default;
+    // const gtaoPass = new GTAOPass(this.#globeScene_, this.#snowSceneCamera_);
+    // gtaoPass.output = GTAOPass.OUTPUT.Default;
 
     const aoParameters = {
       radius: 0.1,
@@ -131,34 +132,34 @@ class ParticleProject extends App {
       rings: 2.,
       samples: 4,
     };
-    gtaoPass.blendIntensity = 0.5;
-    gtaoPass.updateGtaoMaterial( aoParameters );
-    gtaoPass.updatePdMaterial( pdParameters );
+    // gtaoPass.blendIntensity = 0.5;
+    // gtaoPass.updateGtaoMaterial( aoParameters );
+    // gtaoPass.updatePdMaterial( pdParameters );
 
-    const gtaoFolder = pane.addFolder({ title: 'GTAO', expanded: false });
-    gtaoFolder.addBinding(gtaoPass, 'enabled');
-    gtaoFolder.addBinding(gtaoPass, 'output', {
-      options: {
-        'Default': GTAOPass.OUTPUT.Default,
-        'Diffuse': GTAOPass.OUTPUT.Diffuse,
-        'AO Only': GTAOPass.OUTPUT.AO,
-        'AO Only + Denoise': GTAOPass.OUTPUT.Denoise,
-        'Depth': GTAOPass.OUTPUT.Depth,
-        'Normal': GTAOPass.OUTPUT.Normal
-      }
-    });
-    gtaoFolder.addBinding(gtaoPass, 'blendIntensity', { min: 0.0, max: 1.0 });
-    gtaoFolder.addBinding(aoParameters, 'samples', { min: 1, max: 32, step: 1 }).on('change', (e) => {
-      gtaoPass.updateGtaoMaterial( aoParameters );
-    });
-    gtaoFolder.addBinding(aoParameters, 'radius', { min: 0.0, max: 1.0 }).on('change', (e) => {
-      gtaoPass.updateGtaoMaterial( aoParameters );
-    });
+    // const gtaoFolder = pane.addFolder({ title: 'GTAO', expanded: false });
+    // gtaoFolder.addBinding(gtaoPass, 'enabled');
+    // gtaoFolder.addBinding(gtaoPass, 'output', {
+    //   options: {
+    //     'Default': GTAOPass.OUTPUT.Default,
+    //     'Diffuse': GTAOPass.OUTPUT.Diffuse,
+    //     'AO Only': GTAOPass.OUTPUT.AO,
+    //     'AO Only + Denoise': GTAOPass.OUTPUT.Denoise,
+    //     'Depth': GTAOPass.OUTPUT.Depth,
+    //     'Normal': GTAOPass.OUTPUT.Normal
+    //   }
+    // });
+    // gtaoFolder.addBinding(gtaoPass, 'blendIntensity', { min: 0.0, max: 1.0 });
+    // gtaoFolder.addBinding(aoParameters, 'samples', { min: 1, max: 32, step: 1 }).on('change', (e) => {
+    //   gtaoPass.updateGtaoMaterial( aoParameters );
+    // });
+    // gtaoFolder.addBinding(aoParameters, 'radius', { min: 0.0, max: 1.0 }).on('change', (e) => {
+    //   gtaoPass.updateGtaoMaterial( aoParameters );
+    // });
 
     const renderPass = new RenderPass(this.#globeScene_, this.#snowSceneCamera_);
 
     this.#snowSceneComposer_.addPass(renderPass);
-    this.#snowSceneComposer_.addPass(gtaoPass);
+    // this.#snowSceneComposer_.addPass(gtaoPass);
 
 
     const whiteSquareTexture = new THREE.TextureLoader().load('resources/textures/image.png');
