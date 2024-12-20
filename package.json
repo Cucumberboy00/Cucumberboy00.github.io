@@ -1,0 +1,22 @@
+{
+  "name": "package",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "predeploy": "npm run build",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9",
+    "vite-plugin-restart": "^0.4.1"
+  },
+  "dependencies": {
+    "mersennetwister": "^0.2.3",
+    "simplex-noise": "^4.0.3",
+    "three": "^0.169.0",
+    "tweakpane": "^4.0.3"
+  }
+}
