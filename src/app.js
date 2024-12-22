@@ -1,18 +1,18 @@
 import * as THREE from "../node_modules/three/build/three.module.js"
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+import { OrbitControls } from '../node_modules/three/addons/controls/OrbitControls.js';
+import { RGBELoader } from '../node_modules/three/addons/loaders/RGBELoader.js';
 import { Pane } from 'tweakpane';
 
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
-import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
-import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
-import { BrightnessContrastShader } from 'three/addons/shaders/BrightnessContrastShader.js';
+import { EffectComposer } from '../node_modules/three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from '../node_modules/three/addons/postprocessing/RenderPass.js';
+import { ShaderPass } from '../node_modules/three/addons/postprocessing/ShaderPass.js';
+import { OutputPass } from '../node_modules/three/addons/postprocessing/OutputPass.js';
+import { SMAAPass } from '../node_modules/three/addons/postprocessing/SMAAPass.js';
+import { GTAOPass } from '../node_modules/three/addons/postprocessing/GTAOPass.js';
+import { BrightnessContrastShader } from '../node_modules/three/addons/shaders/BrightnessContrastShader.js';
 
-import { LUTPass } from 'three/addons/postprocessing/LUTPass.js';
-import { LUTCubeLoader } from 'three/addons/loaders/LUTCubeLoader.js';
+import { LUTPass } from '../node_modules/three/addons/postprocessing/LUTPass.js';
+import { LUTCubeLoader } from '../node_modules/three/addons/loaders/LUTCubeLoader.js';
 
 import { BloomPass } from './bloomPass.js';
 

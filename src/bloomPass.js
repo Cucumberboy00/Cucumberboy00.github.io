@@ -1,7 +1,7 @@
-import * as THREE from 'three';
+import * as THREE from "../node_modules/three/build/three.module.js"
 
-import { Pass, FullScreenQuad } from 'three/addons/postprocessing/Pass.js';
-import { CopyShader } from 'three/addons/shaders/CopyShader.js';
+import { Pass, FullScreenQuad } from '../node_modules/three/addons/postprocessing/Pass.js';
+import { CopyShader } from '../node_modules/three/addons/shaders/CopyShader.js';
 
 
 const VSH_GENERIC = `

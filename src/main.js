@@ -1,5 +1,5 @@
 import * as THREE from "../node_modules/three/build/three.module.js"
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
 import { App } from './app.js';
 import { GlobeCamera } from './globe-camera.js';
@@ -7,9 +7,9 @@ import * as MATH from './math.js';
 import * as PARTICLES from './particle-system.js';
 import * as NOISE from './noise.js';
 
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
+import { EffectComposer } from '../node_modules/three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from '../node_modules/three/addons/postprocessing/RenderPass.js';
+import { GTAOPass } from '../node_modules/three/addons/postprocessing/GTAOPass.js';
 
 
 import { TextureArrayLoader } from './texture-atlas.js';
