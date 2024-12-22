@@ -150,6 +150,7 @@ class App {
       });
     };
 
+
     // Shader pass
     const vsh = await fetch('resources/shaders/vignette-vsh.glsl');
     const fsh = await fetch('resources/shaders/vignette-fsh.glsl');

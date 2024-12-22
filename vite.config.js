@@ -20,5 +20,5 @@ export default defineConfig({
             clientPort: 5200,
         }
     },
-    base: "/"
+
 });
