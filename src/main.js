@@ -7,9 +7,9 @@ import * as MATH from './math.js';
 import * as PARTICLES from './particle-system.js';
 import * as NOISE from './noise.js';
 
-import { EffectComposer } from '../node_modules/three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from '../node_modules/three/addons/postprocessing/RenderPass.js';
-import { GTAOPass } from '../node_modules/three/addons/postprocessing/GTAOPass.js';
+import { EffectComposer } from '../node_modules/three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from '../node_modules/three/examples/jsm/postprocessing/RenderPass.js';
+import { GTAOPass } from '../node_modules/three/examples/jsm/postprocessing/GTAOPass.js';
 
 
 import { TextureArrayLoader } from './texture-atlas.js';

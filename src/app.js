@@ -1,18 +1,18 @@
 import * as THREE from "../node_modules/three/build/three.module.js"
-import { OrbitControls } from '../node_modules/three/addons/controls/OrbitControls.js';
-import { RGBELoader } from '../node_modules/three/addons/loaders/RGBELoader.js';
+import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
+import { RGBELoader } from '../node_modules/three/examples/jsm/loaders/RGBELoader.js';
 import { Pane } from 'tweakpane';
 
-import { EffectComposer } from '../node_modules/three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from '../node_modules/three/addons/postprocessing/RenderPass.js';
-import { ShaderPass } from '../node_modules/three/addons/postprocessing/ShaderPass.js';
-import { OutputPass } from '../node_modules/three/addons/postprocessing/OutputPass.js';
-import { SMAAPass } from '../node_modules/three/addons/postprocessing/SMAAPass.js';
-import { GTAOPass } from '../node_modules/three/addons/postprocessing/GTAOPass.js';
-import { BrightnessContrastShader } from '../node_modules/three/addons/shaders/BrightnessContrastShader.js';
+import { EffectComposer } from '../node_modules/three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from '../node_modules/three/examples/jsm/postprocessing/RenderPass.js';
+import { ShaderPass } from '../node_modules/three/examples/jsm/postprocessing/ShaderPass.js';
+import { OutputPass } from '../node_modules/three/examples/jsm/postprocessing/OutputPass.js';
+import { SMAAPass } from '../node_modules/three/examples/jsm/postprocessing/SMAAPass.js';
+import { GTAOPass } from '../node_modules/three/examples/jsm/postprocessing/GTAOPass.js';
+import { BrightnessContrastShader } from '../node_modules/three/examples/jsm/shaders/BrightnessContrastShader.js';
 
-import { LUTPass } from '../node_modules/three/addons/postprocessing/LUTPass.js';
-import { LUTCubeLoader } from '../node_modules/three/addons/loaders/LUTCubeLoader.js';
+import { LUTPass } from '../node_modules/three/examples/jsm/postprocessing/LUTPass.js';
+import { LUTCubeLoader } from '../node_modules/three/examples/jsm/loaders/LUTCubeLoader.js';
 
 import { BloomPass } from './bloomPass.js';
 
@@ -68,7 +68,7 @@ class App {
     const near = 0.1;
     const far = 1000;
     this.#camera_ = new THREE.PerspectiveCamera(fov, aspect, near, far);
-    this.#camera_.position.set(-2, 0.5, 1);
+    this.#camera_.position.set(-2, 1.5, 1);
     this.#camera_.lookAt(new THREE.Vector3(0, 0, 0));
 
     const controls = new OrbitControls(this.#camera_, this.#threejs_.domElement);
